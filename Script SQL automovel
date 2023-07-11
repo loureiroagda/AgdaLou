@@ -1,0 +1,23 @@
+-- Table: public.automovel
+
+-- DROP TABLE IF EXISTS public.automovel;
+
+CREATE TABLE IF NOT EXISTS public.automovel
+(
+    renavam integer NOT NULL,
+    chassi character varying(17) COLLATE pg_catalog."default" NOT NULL,
+    placa character varying(7) COLLATE pg_catalog."default" NOT NULL,
+    ano integer NOT NULL,
+    combustivel character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    km integer NOT NULL,
+    porta integer NOT NULL,
+    cor character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    valor double precision NOT NULL,
+    fk_modelo integer,
+    CONSTRAINT automovel_pkey PRIMARY KEY (renavam)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.automovel
+    OWNER to postgres;
